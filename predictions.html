@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spielprognosen | World Cup 2026</title>
+  <meta name="description" content="Lokale World-Cup-2026-Spielprognosen mit geschätzten Resultaten, Wahrscheinlichkeiten und transparenten Modellhinweisen.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-cluster">
+      <details class="brand-menu">
+        <summary class="brand-menu-trigger" aria-label="World-Cup-2026-Menü öffnen">
+          <span class="brand-mark" aria-hidden="true">26</span>
+        </summary>
+        <nav class="brand-dropdown" aria-label="World-Cup-Bereiche">
+          <a href="index.html#top" lang="en">Home</a>
+          <a href="matches.html" lang="en">Match center</a>
+          <a href="groups.html" lang="en">Groups</a>
+          <a href="records.html">Neuheiten &amp; Rekorde</a>
+          <a class="is-active" aria-current="page" href="predictions.html" lang="en">Predictions</a>
+        </nav>
+      </details>
+      <a class="brand-home" href="index.html#top" lang="en">World Cup 2026</a>
+    </div>
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <a href="predictions.html" lang="en">Predictions</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero prediction-hero" aria-labelledby="prediction-title">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow" lang="en">Score model</p>
+        <h1 id="prediction-title" lang="en">Match predictions</h1>
+        <p class="hero-copy" lang="en">Projected scores for upcoming World Cup matches, refreshed from the same local match data as the dashboard.</p>
+
+        <div class="hero-actions" role="group" aria-label="Prognose-Aktionen">
+          <a class="primary-action" href="matches.html" lang="en">Match center</a>
+          <button class="ghost-action" id="prediction-refresh" type="button" lang="en">Refresh predictions</button>
+        </div>
+
+        <div class="prediction-summary" id="prediction-summary" role="group" aria-label="Zusammenfassung der Prognosen"></div>
+      </div>
+    </section>
+
+    <div class="status-bar" aria-live="polite">
+      <div>
+        <strong id="prediction-sync-state" lang="en">Prediction sync checking</strong>
+        <span id="prediction-sync-detail" lang="en">Local prediction model is loading.</span>
+      </div>
+      <span id="prediction-last-updated" lang="en">Updated locally</span>
+    </div>
+
+    <section class="section predictions-section" id="predictions" aria-labelledby="predictions-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" lang="en">Upcoming board</p>
+          <h2 id="predictions-title" lang="en">Predicted scores</h2>
+        </div>
+        <div class="filter-tabs" role="group" aria-label="Prognosefilter">
+          <button class="filter-tab is-active" type="button" data-prediction-filter="next" lang="en">Next 12</button>
+          <button class="filter-tab" type="button" data-prediction-filter="today" lang="en">Today</button>
+          <button class="filter-tab" type="button" data-prediction-filter="confident" lang="en">Confident</button>
+          <button class="filter-tab" type="button" data-prediction-filter="all" lang="en">All</button>
+        </div>
+      </div>
+
+      <div class="prediction-spotlight" id="prediction-spotlight"></div>
+      <div class="prediction-list" id="prediction-list"></div>
+    </section>
+
+    <section class="section sources-section" aria-labelledby="prediction-sources-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" lang="en">Data trail</p>
+          <h2 id="prediction-sources-title" lang="en">Prediction sources</h2>
+        </div>
+      </div>
+      <div class="source-list prediction-source-list" id="prediction-sources"></div>
+    </section>
+
+    <section class="section information-section" aria-labelledby="predictions-information-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Einordnung</p>
+          <h2 id="predictions-information-title">So sind die Prognosen zu verstehen</h2>
+        </div>
+      </div>
+      <div class="information-layout">
+        <img class="information-image" src="assets/world-cup-hero.png" alt="Fussball im Vordergrund eines voll beleuchteten Stadions">
+        <div class="information-text">
+          <p>Die Prognosen sind modellbasierte Schätzungen und keine garantierten Vorhersagen eines späteren Resultats.</p>
+          <p>Das lokale Modell kombiniert hinterlegte Teamstärken, bisherige Gruppenresultate und einen kleinen Gastgebervorteil.</p>
+          <p>Für mögliche Spielstände verwendet die Seite eine Poisson-basierte Verteilung mit mehreren plausiblen Resultaten.</p>
+          <p>Die angezeigten Prozentwerte beschreiben die modellierte Wahrscheinlichkeit für Heimsieg, Unentschieden oder Auswärtssieg.</p>
+          <p>Eine hohe Modellwahrscheinlichkeit bedeutet nicht, dass Überraschungen ausgeschlossen sind.</p>
+          <p>Nach bestätigten Resultaten werden abgeschlossene Begegnungen aus der Liste der kommenden Prognosen entfernt.</p>
+          <p>Die Seite verwendet nur die im Projekt vorhandenen Gruppenspiele und erfindet keine späteren K.-o.-Paarungen.</p>
+          <p>Die Quellenhinweise helfen dabei, Modellwerte von offiziellen Turnierinformationen und redaktionellen Einschätzungen zu unterscheiden.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Erstellt von Luca Greutert</p>
+  </footer>
+
+  <script src="data/live-overrides.js"></script>
+  <script src="script.js"></script>
+  <script src="predictions.js"></script>
+</body>
+</html>

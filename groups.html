@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gruppen und Tabellen | World Cup 2026</title>
+  <meta name="description" content="Aktuelle Gruppentabellen der World-Cup-2026-Website, berechnet aus den bestätigten Resultaten der 72 Gruppenspiele.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-cluster">
+      <details class="brand-menu">
+        <summary class="brand-menu-trigger" aria-label="World-Cup-2026-Menü öffnen">
+          <span class="brand-mark" aria-hidden="true">26</span>
+        </summary>
+        <nav class="brand-dropdown" aria-label="World-Cup-Bereiche">
+          <a href="index.html#top" lang="en">Home</a>
+          <a href="matches.html" lang="en">Match center</a>
+          <a class="is-active" aria-current="page" href="groups.html" lang="en">Groups</a>
+          <a href="records.html">Neuheiten &amp; Rekorde</a>
+          <a href="predictions.html" lang="en">Predictions</a>
+        </nav>
+      </details>
+      <a class="brand-home" href="index.html#top" lang="en">World Cup 2026</a>
+    </div>
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <a href="predictions.html" lang="en">Predictions</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-hero" aria-labelledby="groups-page-title">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow" lang="en">Twelve groups</p>
+        <h1 id="groups-page-title" lang="en">Groups and standings</h1>
+        <p class="hero-copy" lang="en">Live group tables calculated from completed matches, goal difference, and points.</p>
+
+        <div class="hero-actions" role="group" aria-label="Gruppen-Aktionen">
+          <a class="primary-action" href="matches.html" lang="en">Match center</a>
+          <button class="ghost-action" id="refresh-button" type="button" lang="en">Refresh data</button>
+        </div>
+
+        <div class="signal-strip" role="group" aria-label="Turnierinformationen">
+          <div>
+            <span class="signal-label" lang="en">Next match</span>
+            <span class="signal-value" id="signal-next">Loading</span>
+          </div>
+          <div>
+            <span class="signal-label" lang="en">Today</span>
+            <span class="signal-value" id="signal-today">0</span>
+          </div>
+          <div>
+            <span class="signal-label" lang="en">Final scores</span>
+            <span class="signal-value" id="signal-complete">0</span>
+          </div>
+          <div>
+            <span class="signal-label" lang="en">Groups</span>
+            <span class="signal-value">12</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="status-bar" aria-live="polite">
+      <div>
+        <strong id="sync-state" lang="en">Auto sync checking</strong>
+        <span id="sync-detail" lang="en">Local seed data is loaded.</span>
+      </div>
+      <span id="last-updated" lang="en">Updated locally</span>
+    </div>
+
+    <section class="section page-content-section" id="groups" aria-labelledby="groups-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" lang="en">Current table</p>
+          <h2 id="groups-title" lang="en">All groups</h2>
+        </div>
+      </div>
+      <div class="group-grid" id="group-grid"></div>
+    </section>
+
+    <section class="section information-section" aria-labelledby="groups-information-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Tabellenhilfe</p>
+          <h2 id="groups-information-title">So werden die Gruppen dargestellt</h2>
+        </div>
+      </div>
+      <div class="information-layout">
+        <img class="information-image" src="assets/world-cup-hero.png" alt="Grosses Fussballstadion mit beleuchteten Tribünen">
+        <div class="information-text">
+          <p>Die Gruppenseite zeigt alle zwölf Gruppen des Turniers in einer einheitlichen Tabellenansicht.</p>
+          <p>Jede Tabelle enthält Spiele, Siege, Unentschieden, Niederlagen, Tordifferenz und Punkte.</p>
+          <p>Die Werte werden aus den bestätigten Endresultaten des lokalen Gruppenspiel-Datensatzes berechnet.</p>
+          <p>Ein Sieg zählt drei Punkte, während ein Unentschieden beiden Teams je einen Punkt bringt.</p>
+          <p>Bei gleicher Punktzahl berücksichtigt die Darstellung zuerst die Tordifferenz und danach die erzielten Tore.</p>
+          <p>Noch nicht ausgetragene oder nicht bestätigte Spiele verändern die Tabelle nicht.</p>
+          <p>Auf kleinen Bildschirmen lassen sich breite Tabellen horizontal verschieben, damit lange Teamnamen vollständig lesbar bleiben.</p>
+          <p>Die Tabellen dienen als kompakte Orientierung und ersetzen keine offiziellen Entscheide über weitere Rangierungskriterien.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Erstellt von Luca Greutert</p>
+  </footer>
+
+  <script src="data/live-overrides.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

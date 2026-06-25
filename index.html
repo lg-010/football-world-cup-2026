@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Cup 2026 | Lokales Dashboard</title>
+  <meta name="description" content="Lokales World-Cup-2026-Dashboard mit Gruppenspielen, Resultaten, Tabellen, Prognosen und Rekorden.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-cluster">
+      <details class="brand-menu">
+        <summary class="brand-menu-trigger" aria-label="World-Cup-2026-Menü öffnen">
+          <span class="brand-mark" aria-hidden="true">26</span>
+        </summary>
+        <nav class="brand-dropdown" aria-label="World-Cup-Bereiche">
+          <a class="is-active" aria-current="page" href="#top" lang="en">Home</a>
+          <a href="matches.html" lang="en">Match center</a>
+          <a href="groups.html" lang="en">Groups</a>
+          <a href="records.html">Neuheiten &amp; Rekorde</a>
+          <a href="predictions.html" lang="en">Predictions</a>
+        </nav>
+      </details>
+      <a class="brand-home" href="#top" lang="en">World Cup 2026</a>
+    </div>
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <a href="predictions.html" lang="en">Predictions</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow" lang="en">Canada - Mexico - United States</p>
+        <h1 id="hero-title" lang="en">World Cup 2026</h1>
+        <p class="hero-copy" lang="en">The expanded 48-team tournament runs from June 11 to July 19, with 104 matches and a new round of 32.</p>
+
+        <div class="hero-actions" role="group" aria-label="Dashboard-Aktionen">
+          <a class="primary-action" href="matches.html" lang="en">Match center</a>
+          <button class="ghost-action" id="refresh-button" type="button" lang="en">Refresh data</button>
+        </div>
+
+        <div class="signal-strip" role="group" aria-label="Turnierinformationen">
+          <div>
+            <span class="signal-label" lang="en">Next match</span>
+            <span class="signal-value" id="signal-next">Loading</span>
+          </div>
+          <div>
+            <span class="signal-label" lang="en">Today</span>
+            <span class="signal-value" id="signal-today">0</span>
+          </div>
+          <div>
+            <span class="signal-label" lang="en">Final scores</span>
+            <span class="signal-value" id="signal-complete">0</span>
+          </div>
+          <div>
+            <span class="signal-label">Erfasster Datensatz</span>
+            <span class="signal-value">72 Gruppenspiele</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="status-bar" aria-live="polite">
+      <div>
+        <strong id="sync-state" lang="en">Auto sync checking</strong>
+        <span id="sync-detail" lang="en">Local seed data is loaded.</span>
+      </div>
+      <span id="last-updated" lang="en">Updated locally</span>
+    </div>
+
+    <section class="section format-section" id="format" aria-labelledby="format-title" lang="en">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Tournament path</p>
+          <h2 id="format-title">Format</h2>
+        </div>
+      </div>
+      <div class="format-grid">
+        <article class="format-card">
+          <span class="format-number">48</span>
+          <h3>Teams</h3>
+          <p>Twelve groups of four teams open the tournament.</p>
+        </article>
+        <article class="format-card">
+          <span class="format-number">32</span>
+          <h3>Knockout places</h3>
+          <p>The top two in each group plus the eight best third-place teams advance.</p>
+        </article>
+        <article class="format-card">
+          <span class="format-number">Jul 19</span>
+          <h3>Final</h3>
+          <p>The final is scheduled for New York/New Jersey.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section sources-section" aria-labelledby="sources-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Data trail</p>
+          <h2 id="sources-title">Sources</h2>
+        </div>
+      </div>
+      <div class="source-list">
+        <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026" target="_blank" rel="noreferrer">FIFA tournament hub</a>
+        <a href="https://en.wikipedia.org/wiki/2026_FIFA_World_Cup" target="_blank" rel="noreferrer">Wikipedia tournament page</a>
+        <a href="https://www.theguardian.com/football/2026/jun/11/mexico-south-africa-world-cup-2026" target="_blank" rel="noreferrer">Mexico 2-0 South Africa report</a>
+        <a href="https://www.theguardian.com/football/live/2026/jun/12/fifa-world-cup-2026-live-south-korea-v-czechia-updates-kor-vs-cze-group-a-match-score-latest" target="_blank" rel="noreferrer">South Korea 2-1 Czechia report</a>
+      </div>
+    </section>
+
+    <section class="section information-section" aria-labelledby="home-information-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Überblick</p>
+          <h2 id="home-information-title">So ist das Dashboard aufgebaut</h2>
+        </div>
+      </div>
+      <div class="information-layout">
+        <img class="information-image" src="assets/world-cup-hero.png" alt="Beleuchtetes Fussballstadion während eines internationalen Turniers">
+        <div class="information-text">
+          <p>Diese Startseite bündelt die wichtigsten Bereiche der World-Cup-2026-Website an einem zentralen Ort.</p>
+          <p>Die Turnierinformationen zeigen den nächsten Termin, die Spiele des Tages und die Anzahl der bereits abgeschlossenen Partien.</p>
+          <p>Das vollständige Turnier umfasst insgesamt 104 Spiele.</p>
+          <p>Der aktuell hinterlegte Datensatz bildet davon die 72 Gruppenspiele ab und erfindet keine Begegnungen der K.-o.-Phase.</p>
+          <p>Der Matchcenter bietet eine sortierbare Übersicht über Termine, Resultate und Spielorte.</p>
+          <p>Die Gruppenseite berechnet ihre Tabellen aus den bestätigten Resultaten des lokalen Datensatzes.</p>
+          <p>Die Prognoseseite zeigt modellbasierte Einschätzungen, die ausdrücklich keine garantierten Resultate darstellen.</p>
+          <p>Die Seite Neuheiten und Rekorde ergänzt das aktuelle Turnier mit historischen Vergleichswerten und vorsichtig formulierten Hintergründen.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Erstellt von Luca Greutert</p>
+  </footer>
+
+  <script src="data/live-overrides.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

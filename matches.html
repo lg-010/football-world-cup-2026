@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matchcenter | World Cup 2026</title>
+  <meta name="description" content="Matchcenter der World-Cup-2026-Website mit 72 erfassten Gruppenspielen, Terminen, Spielorten und Resultaten.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-cluster">
+      <details class="brand-menu">
+        <summary class="brand-menu-trigger" aria-label="World-Cup-2026-Menü öffnen">
+          <span class="brand-mark" aria-hidden="true">26</span>
+        </summary>
+        <nav class="brand-dropdown" aria-label="World-Cup-Bereiche">
+          <a href="index.html#top" lang="en">Home</a>
+          <a class="is-active" aria-current="page" href="matches.html" lang="en">Match center</a>
+          <a href="groups.html" lang="en">Groups</a>
+          <a href="records.html">Neuheiten &amp; Rekorde</a>
+          <a href="predictions.html" lang="en">Predictions</a>
+        </nav>
+      </details>
+      <a class="brand-home" href="index.html#top" lang="en">World Cup 2026</a>
+    </div>
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <a href="predictions.html" lang="en">Predictions</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-hero" aria-labelledby="matches-page-title">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow" lang="en">Live board</p>
+        <h1 id="matches-page-title" lang="en">Match center</h1>
+        <p class="hero-copy" lang="en">Fixtures, final scores, venues, and the next World Cup matches in one focused view.</p>
+
+        <div class="hero-actions" role="group" aria-label="Matchcenter-Aktionen">
+          <a class="primary-action" href="groups.html" lang="en">View groups</a>
+          <button class="ghost-action" id="refresh-button" type="button" lang="en">Refresh data</button>
+        </div>
+
+        <div class="signal-strip" role="group" aria-label="Turnierinformationen">
+          <div>
+            <span class="signal-label" lang="en">Next match</span>
+            <span class="signal-value" id="signal-next">Loading</span>
+          </div>
+          <div>
+            <span class="signal-label" lang="en">Today</span>
+            <span class="signal-value" id="signal-today">0</span>
+          </div>
+          <div>
+            <span class="signal-label" lang="en">Final scores</span>
+            <span class="signal-value" id="signal-complete">0</span>
+          </div>
+          <div>
+            <span class="signal-label">Erfasster Datensatz</span>
+            <span class="signal-value">72 Gruppenspiele</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="status-bar" aria-live="polite">
+      <div>
+        <strong id="sync-state" lang="en">Auto sync checking</strong>
+        <span id="sync-detail" lang="en">Local seed data is loaded.</span>
+      </div>
+      <span id="last-updated" lang="en">Updated locally</span>
+    </div>
+
+    <section class="section page-content-section match-section" id="matches" aria-labelledby="matches-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" lang="en">Tournament schedule</p>
+          <h2 id="matches-title" lang="en">Matches and results</h2>
+        </div>
+        <div class="filter-tabs" role="group" aria-label="Spielfilter">
+          <button class="filter-tab" type="button" data-filter="today" lang="en">Today</button>
+          <button class="filter-tab" type="button" data-filter="upcoming" lang="en">Upcoming</button>
+          <button class="filter-tab is-active" type="button" data-filter="results" lang="en">Results</button>
+          <button class="filter-tab" type="button" data-filter="all" lang="en">All</button>
+        </div>
+      </div>
+
+      <div class="match-rail" id="match-rail" role="region" aria-label="Ausgewählte Spiele"></div>
+      <div class="match-list" id="match-list"></div>
+    </section>
+
+    <section class="section information-section" aria-labelledby="matches-information-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Orientierung</p>
+          <h2 id="matches-information-title">So funktioniert der Matchcenter</h2>
+        </div>
+      </div>
+      <div class="information-layout">
+        <img class="information-image" src="assets/world-cup-hero.png" alt="Fussball auf dem Rasen eines beleuchteten Stadions">
+        <div class="information-text">
+          <p>Der Matchcenter enthält die 72 Gruppenspiele, die im lokalen Datensatz dieser Website hinterlegt sind.</p>
+          <p>Jede Spielkarte zeigt die beteiligten Teams, den Anpfiff, den Spielort und den aktuellen Status.</p>
+          <p>Im Bereich Resultate werden alle Begegnungen angezeigt, für die ein bestätigtes Endergebnis vorliegt.</p>
+          <p>Der Filter Heute beschränkt die Übersicht auf Partien des aktuellen Kalendertages in der lokalen Zeitzone.</p>
+          <p>Der Filter Bevorstehend zeigt die nächsten noch nicht abgeschlossenen Gruppenspiele in zeitlicher Reihenfolge.</p>
+          <p>Mit dem Filter Alle lässt sich der gesamte erfasste Gruppenspielplan gemeinsam anzeigen.</p>
+          <p>Lokale Aktualisierungsdateien ergänzen neue Resultate, ohne die ursprünglichen Begegnungsdaten zu ersetzen.</p>
+          <p>Das Turnier umfasst insgesamt 104 Spiele, doch nicht hinterlegte K.-o.-Spiele werden im Matchcenter bewusst nicht erfunden.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Erstellt von Luca Greutert</p>
+  </footer>
+
+  <script src="data/live-overrides.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
